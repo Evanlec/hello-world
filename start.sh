@@ -10,6 +10,6 @@ venv/bin/pip install -r requirements.txt
 venv/bin/gunicorn \
     --daemon \
     --workers 4 \
-    --error-logfile ./error-log.log
+    --error-logfile ./error-log.log \
     --reload \
     hello-world:app
