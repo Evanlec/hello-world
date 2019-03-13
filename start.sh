@@ -1,4 +1,7 @@
-kill -TERM $(pgrep gunicorn)
+pgrep gunicorn >> /dev/null
+if [[ "$?" = 0 ]]; then
+    kill -TERM $(pgrep gunicorn)
+fi
 
 if [[ -d "$PWD/venv" ]]; then
     rm -rf "$PWD/venv"
